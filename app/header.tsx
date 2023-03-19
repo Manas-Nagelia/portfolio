@@ -33,7 +33,7 @@ const useStyles = createStyles((theme) => ({
     top: rem(56),
     left: 0,
     right: 0,
-    zIndex: 0,
+    zIndex: 50,
     borderTopRightRadius: 0,
     borderTopLeftRadius: 0,
     borderTopWidth: 0,
@@ -72,8 +72,8 @@ const useStyles = createStyles((theme) => ({
     "&:hover": {
       backgroundColor:
         theme.colorScheme === "dark"
-          ? theme.colors.dark[6]
-          : theme.colors.gray[0],
+          ? theme.fn.rgba(theme.colors.dark[3], 0.35)
+          : theme.colors.gray[1],
     },
     [theme.fn.smallerThan("sm")]: {
       padding: `${rem(16)} ${rem(24)}`,
@@ -90,8 +90,7 @@ const useStyles = createStyles((theme) => ({
         variant: "light",
         color: theme.primaryColor,
       }).background,
-      color: theme.fn.variant({ variant: "light", color: theme.primaryColor })
-        .color,
+      color: "#F8F8FD",
     },
   },
 
@@ -230,7 +229,7 @@ export function HeaderMenu({ links }: HeaderSearchProps) {
   });
 
   return (
-    <Header height={56} mb={20}>
+    <Header height={56} mb={1}>
       <Container>
         <div className={classes.inner}>
           <MantineLogo size={28} />

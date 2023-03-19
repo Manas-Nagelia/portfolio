@@ -70,7 +70,7 @@ export default function RootLayout({
                 ],
               },
             ]}
-          ></HeaderMenu>
+          />
           {children}
         </RootStyleRegistry>
       </body>

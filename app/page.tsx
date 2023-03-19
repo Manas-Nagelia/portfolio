@@ -1,14 +1,18 @@
 "use client";
 
 import { Inter } from "next/font/google";
-import { Text } from "@mantine/core";
+import { Grid, Text, Title } from "@mantine/core";
+import { HeroContentLeft } from "./hero";
+import { Project } from "./Project";
+import Featured from "./Featured";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <div>
-      <Text>whats up</Text>
-    </div>
+    <>
+      <HeroContentLeft />
+      <Featured />
+    </>
   );
 }

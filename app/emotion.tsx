@@ -23,7 +23,41 @@ export default function RootStyleRegistry({
 
   return (
     <CacheProvider value={cache}>
-      <MantineProvider withGlobalStyles withNormalizeCSS>
+      <MantineProvider
+        withGlobalStyles
+        withNormalizeCSS
+        theme={{
+          colorScheme: "dark",
+          colors: {
+            brand: [
+              "#F8F8FD",
+              "#D1D6F6",
+              "#ACB5F2",
+              "#8694F2",
+              "#6074F6",
+              "#3A54FD",
+              "#2541F3",
+              "#1833E4",
+              "#2134AB",
+              "#243394",
+            ],
+            dark: [
+              "#C1C2C5",
+              "#aaaab3",
+              "#9595a2",
+              "#47484e",
+              "#37383c",
+              "#282930",
+              "#222328",
+              "#24262F",
+              "#141417",
+              "#111215",
+            ],
+          },
+          primaryColor: "brand",
+          primaryShade: 5,
+        }}
+      >
         {children}
       </MantineProvider>
     </CacheProvider>
