@@ -11,6 +11,8 @@ import {
   rem,
   Transition,
   Paper,
+  Accordion,
+  Collapse,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { IconChevronDown } from "@tabler/icons-react";
@@ -92,6 +94,16 @@ const useStyles = createStyles((theme) => ({
         .color,
     },
   },
+
+  iconDown: {
+    transform: "rotate(0deg)",
+    transition: "transform 0.2s linear",
+  },
+
+  iconUp: {
+    transform: "rotate(180deg)",
+    transition: "transform 0.2s linear",
+  },
 }));
 
 interface HeaderSearchProps {
@@ -105,34 +117,55 @@ interface HeaderSearchProps {
 export function HeaderMenu({ links }: HeaderSearchProps) {
   const [opened, { toggle }] = useDisclosure(false);
   const [active, setActive] = useState(links[0].link);
+  const [linksOpened, setLinks] = useState<any | undefined>(undefined);
   const { classes, cx } = useStyles();
 
   const burgerItems = links.map((link) => {
     const menuItems = link.links?.map((item) => (
-      <Menu.Item key={item.link}>{item.label}</Menu.Item>
+      <Link
+        key={item.label}
+        href={item.link}
+        className={cx(classes.link, {
+          [classes.linkActive]: active === link.link,
+        })}
+        style={{ textIndent: "25px" }}
+        onClick={(event) => {
+          setActive(item.link);
+          toggle();
+          close();
+        }}
+      >
+        {item.label}
+      </Link>
     ));
     if (menuItems) {
       return (
-        <Menu
-          key={link.label}
-          trigger="hover"
-          transitionProps={{ exitDuration: 0 }}
-          withinPortal
-        >
-          <Menu.Target>
-            <a
-              href={link.link}
-              className={classes.link}
-              onClick={(event) => event.preventDefault()}
-            >
-              <Group position="apart">
-                <span className={classes.linkLabel}>{link.label}</span>
-                <IconChevronDown size="0.9rem" stroke={1.5} />
-              </Group>
-            </a>
-          </Menu.Target>
-          <Menu.Dropdown>{menuItems}</Menu.Dropdown>
-        </Menu>
+        <>
+          <a
+            href={link.link}
+            className={classes.link}
+            onClick={(event) => {
+              event.preventDefault();
+              if (linksOpened == undefined || link.link != linksOpened) {
+                setLinks(link.link);
+              } else {
+                setLinks(undefined);
+              }
+            }}
+          >
+            <Group position="apart">
+              <span className={classes.linkLabel}>{link.label}</span>
+              <IconChevronDown
+                size="0.9rem"
+                stroke={1.5}
+                className={
+                  linksOpened != link.link ? classes.iconDown : classes.iconUp
+                }
+              />
+            </Group>
+          </a>
+          <Collapse in={linksOpened == link.link}>{menuItems}</Collapse>
+        </>
       );
     } else {
       return (
@@ -206,7 +239,10 @@ export function HeaderMenu({ links }: HeaderSearchProps) {
           </Group>
           <Burger
             opened={opened}
-            onClick={toggle}
+            onClick={() => {
+              toggle();
+              setLinks(undefined);
+            }}
             className={classes.burger}
             size="sm"
           />
