@@ -42,9 +42,9 @@ export default function RootStyleRegistry({
               "#243394",
             ],
             dark: [
-              "#C1C2C5",
-              "#aaaab3",
-              "#9595a2",
+              "#c1c1c3",
+              "#a2a2aa",
+              "#96969d",
               "#47484e",
               "#37383c",
               "#282930",

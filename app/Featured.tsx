@@ -3,8 +3,8 @@ import { Project } from "./Project";
 
 const useStyles = createStyles((theme: MantineTheme) => ({
   grid: {
-    marginLeft: "5em",
-    marginRight: "5em",
+    marginLeft: "5%",
+    marginRight: "5%",
   },
 
   title: {
@@ -33,13 +33,13 @@ const Featured = () => {
         Portfolio
       </Title>
       <Grid mt="sm" gutter="xl" className={classes.grid}>
-        <Grid.Col span={4}>
+        <Grid.Col md={6} lg={4}>
           <Project />
         </Grid.Col>
-        <Grid.Col span={4}>
+        <Grid.Col md={6} lg={4}>
           <Project />
         </Grid.Col>
-        <Grid.Col span={4}>
+        <Grid.Col md={6} lg={4}>
           <Project />
         </Grid.Col>
       </Grid>

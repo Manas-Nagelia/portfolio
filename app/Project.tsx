@@ -1,6 +1,6 @@
 import {
   Card,
-  Image,
+  Image as MantineImage,
   Text,
   Group,
   Badge,
@@ -15,6 +15,9 @@ import {
   IconManualGearbox,
   IconUsers,
 } from "@tabler/icons-react";
+import { Portfolio } from "./PortfolioInterface";
+import Image from "next/image";
+import { useMediaQuery } from "@mantine/hooks";
 
 const useStyles = createStyles((theme) => ({
   card: {
@@ -64,8 +67,10 @@ const mockdata = [
   { label: "Electric", icon: IconGasStation },
 ];
 
-export function Project() {
-  const { classes } = useStyles();
+export function Project(props: Portfolio) {
+  const { classes, theme } = useStyles();
+  const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.md}px)`);
+
   const features = mockdata.map((feature) => (
     <Center key={feature.label}>
       <feature.icon size="1.05rem" className={classes.icon} stroke={1.5} />
@@ -76,12 +81,28 @@ export function Project() {
   return (
     <Card withBorder radius="md" className={classes.card}>
       <Card.Section className={classes.imageSection}>
-        <Image src="https://i.imgur.com/ZL52Q2D.png" alt="Tesla Model S" />
+        <Image
+          src="/Tesla.png"
+          alt="Tesla Model S"
+          width="0"
+          height="0"
+          sizes={!mobile ? "15vw" : "35vw"}
+          style={{
+            width: "100%",
+            height: "auto",
+            objectFit: "cover",
+          }}
+        />
+        {/* <MantineImage
+          src="https://i.imgur.com/ZL52Q2D.png"
+          alt="Tesla Model S"
+        /> */}
+        {/* <Image src={tesla} alt="Tesla Model S" fill /> */}
       </Card.Section>
 
       <Group position="apart" mt="md">
         <div>
-          <Text fw={500}>Tesla Model S</Text>
+          <Text weight={900}>Tesla Model S</Text>
           <Text fz="xs" c="dimmed">
             Free recharge at any station
           </Text>
@@ -101,16 +122,13 @@ export function Project() {
 
       <Card.Section className={classes.section}>
         <Group spacing={30}>
-          <div>
-            <Text fz="xl" fw={700} sx={{ lineHeight: 1 }}>
-              $168.00
-            </Text>
-            <Text fz="sm" c="dimmed" fw={500} sx={{ lineHeight: 1 }} mt={3}>
-              per day
-            </Text>
-          </div>
-
-          <Button radius="xl" style={{ flex: 1 }}>
+          <Button
+            radius="xl"
+            style={{ flex: 1 }}
+            component="a"
+            href="https://google.com"
+            target="__blank"
+          >
             Rent now
           </Button>
         </Group>
