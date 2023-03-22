@@ -1,26 +1,57 @@
-import { Grid, MantineTheme, Title, createStyles, rem } from "@mantine/core";
+import {
+  Badge,
+  Button,
+  Center,
+  Grid,
+  Group,
+  MantineTheme,
+  Title,
+  createStyles,
+  rem,
+  Text,
+} from "@mantine/core";
 import { Project } from "./Project";
+import {
+  IconBrandNextjs,
+  IconBrandSupabase,
+  IconDatabase,
+  IconBrandReact,
+  IconApi,
+  IconChartBar,
+  IconBrandWix,
+  IconSeo,
+  IconBuilding,
+} from "@tabler/icons-react";
 
 const useStyles = createStyles((theme: MantineTheme) => ({
   grid: {
+    marginTop: "0.1%",
     marginLeft: "5%",
     marginRight: "5%",
   },
 
+  description: {
+    maxWidth: 600,
+    margin: "auto",
+
+    "&::after": {
+      content: '""',
+      display: "block",
+      backgroundColor: theme.fn.primaryColor(),
+      width: rem(45),
+      height: rem(2),
+      marginTop: theme.spacing.sm,
+      marginLeft: "auto",
+      marginRight: "auto",
+    },
+  },
+
   title: {
-    color: theme.white,
-    fontSize: rem(50),
-    fontWeight: 800,
-    textAlign: "center",
-    lineHeight: 1.1,
+    fontSize: rem(34),
+    fontWeight: 900,
 
     [theme.fn.smallerThan("sm")]: {
-      fontSize: rem(40),
-      lineHeight: 1.2,
-    },
-
-    [theme.fn.smallerThan("xs")]: {
-      fontSize: rem(40),
+      fontSize: rem(24),
     },
   },
 }));
@@ -29,18 +60,80 @@ const Featured = () => {
   const { classes } = useStyles();
   return (
     <div id="feature">
-      <Title className={classes.title} mt={40}>
+      <Group position="center" mt={40}>
+        <Badge
+          variant="gradient"
+          gradient={{ from: "indigo", to: "brand" }}
+          size="lg"
+        >
+          Stunning projects
+        </Badge>
+      </Group>
+
+      <Title order={2} className={classes.title} ta="center" mt="sm">
         Portfolio
       </Title>
-      <Grid mt="sm" gutter="xl" className={classes.grid}>
+
+      <Text c="dimmed" className={classes.description} ta="center" mt="md">
+        Take a look at the best ones.
+      </Text>
+      <Group mt="xl" position="center" mb="sm">
+        <Button size="md" radius="xl" component="a">
+          See more projects
+        </Button>
+      </Group>
+      <Grid gutter="xl" className={classes.grid}>
         <Grid.Col md={6} lg={4}>
-          <Project />
+          <Project
+            name="Garden Playhouse Daycare Website"
+            desc="Made the website for a daycare located in Fremont, California. Built in Next.js. Ships with admin center to update content."
+            label="Full Stack Website"
+            imageName="Garden.webp"
+            imageAlt="An image of the website, Garden Playhouse Daycare."
+            data={[
+              { label: "Next.js", icon: IconBrandNextjs },
+              { label: "Supabase and Postgres", icon: IconBrandSupabase },
+              { label: "Admin Center", icon: IconChartBar },
+            ]}
+            linkName="Website"
+            link="https://gardenplayhouse.net/"
+            buttonColor="#0CA678"
+          />
         </Grid.Col>
         <Grid.Col md={6} lg={4}>
-          <Project />
+          <Project
+            name="Portal Bioscience"
+            desc="Made the website for a pathology company, Portal Bioscience in Wix."
+            label="Wix"
+            imageName="Portal.webp"
+            imageAlt="An image of the website, Portal Bioscience."
+            data={[
+              { label: "Wix", icon: IconBrandWix },
+              { label: "SEO Optimized", icon: IconSeo },
+              { label: "Business Website", icon: IconBuilding },
+            ]}
+            linkName="Website"
+            link="https://portalbioscience.com/"
+            buttonColor="#BA1E23"
+          />
         </Grid.Col>
         <Grid.Col md={6} lg={4}>
-          <Project />
+          <Project
+            name="ChatMe"
+            desc="A personal project, a realtime chat app build with Next.js. Ships with a stunning UI and ability to chat with multiple people. "
+            label="Full Stack Website"
+            imageName="Chat.webp"
+            imageAlt="An image of the chat app, ChatMe."
+            data={[
+              { label: "Node", icon: IconApi },
+              { label: "Next.js", icon: IconBrandNextjs },
+              { label: "Supabase Backend", icon: IconBrandSupabase },
+              { label: "Postgres", icon: IconDatabase },
+            ]}
+            linkName="GitHub"
+            link="https://github.com/Manas-Nagelia/ChatMe"
+            buttonColor="#1C7ED6"
+          />
         </Grid.Col>
       </Grid>
     </div>

@@ -94,6 +94,8 @@ export function HeroContentLeft() {
           radius="xl"
           className={classes.control}
           rightIcon={<IconChevronDown style={{ marginTop: "2px"}} size={25} />}
+          component="a"
+          href="#feature"
         >
           See my portfolio
         </Button>

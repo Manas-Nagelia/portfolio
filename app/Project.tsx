@@ -8,6 +8,7 @@ import {
   Center,
   Button,
   rem,
+  MantineTheme,
 } from "@mantine/core";
 import {
   IconGasStation,
@@ -71,7 +72,7 @@ export function Project(props: Portfolio) {
   const { classes, theme } = useStyles();
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.md}px)`);
 
-  const features = mockdata.map((feature) => (
+  const features = props.data.map((feature) => (
     <Center key={feature.label}>
       <feature.icon size="1.05rem" className={classes.icon} stroke={1.5} />
       <Text size="xs">{feature.label}</Text>
@@ -82,37 +83,33 @@ export function Project(props: Portfolio) {
     <Card withBorder radius="md" className={classes.card}>
       <Card.Section className={classes.imageSection}>
         <Image
-          src="/Tesla.png"
-          alt="Tesla Model S"
+          src={`/${props.imageName}`}
+          alt={props.imageAlt}
           width="0"
           height="0"
-          sizes={!mobile ? "15vw" : "35vw"}
+          sizes={!mobile ? "15vw" : "80vw"}
           style={{
             width: "100%",
             height: "auto",
             objectFit: "cover",
+            borderRadius: "0.5rem",
           }}
         />
-        {/* <MantineImage
-          src="https://i.imgur.com/ZL52Q2D.png"
-          alt="Tesla Model S"
-        /> */}
-        {/* <Image src={tesla} alt="Tesla Model S" fill /> */}
       </Card.Section>
 
       <Group position="apart" mt="md">
         <div>
-          <Text weight={900}>Tesla Model S</Text>
+          <Text weight={900}>{props.name}</Text>
           <Text fz="xs" c="dimmed">
-            Free recharge at any station
+            {props.desc}
           </Text>
         </div>
-        <Badge variant="gradient">25% off</Badge>
+        <Badge variant="gradient">{props.label}</Badge>
       </Group>
 
       <Card.Section className={classes.section} mt="md">
         <Text fz="sm" c="dimmed" className={classes.label}>
-          Basic configuration
+          Features and Technologies
         </Text>
 
         <Group spacing={8} mb={-8}>
@@ -125,11 +122,20 @@ export function Project(props: Portfolio) {
           <Button
             radius="xl"
             style={{ flex: 1 }}
+            styles={(theme: MantineTheme) => ({
+              root: {
+                backgroundColor: props.buttonColor ?? undefined,
+
+                "&:not([data-disabled])": theme.fn.hover({
+                  backgroundColor: theme.fn.darken(`${props.buttonColor ?? undefined}`, 0.05),
+                }),
+              },
+            })}
             component="a"
-            href="https://google.com"
+            href={props.link}
             target="__blank"
           >
-            Rent now
+            {props.linkName}
           </Button>
         </Group>
       </Card.Section>
