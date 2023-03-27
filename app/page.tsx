@@ -1,21 +1,44 @@
-"use client";
-
 import { Inter } from "next/font/google";
-import { Grid, Text, Title } from "@mantine/core";
-import { HeroContentLeft } from "./hero";
-import { Project } from "./Project";
-import Featured from "./Featured";
-import { Skills } from "./Skills";
-import "./styles.css";
+import HomePage from "./HomePage";
+import fs from "fs";
+import { BlogResponse } from "./Blog";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+async function getData() {
+  const queryParams = new URLSearchParams({
+    rss_url: "https://medium.com/feed/@manasnagelia",
+  });
+
+  const res = await fetch(
+    "https://api.rss2json.com/v1/api.json?" + queryParams,
+    {
+      next: { revalidate: 7200 },
+    }
+  );
+
+  const json = res.json();
+
+  // The return value is *not* serialized
+  // You can return Date, Map, Set, etc.
+
+  // Recommendation: handle errors
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error(
+      `Failed to fetch data. Status Code: ${res.status} ${res.statusText}`
+    );
+  }
+
+  return json;
+}
+
+export default async function Page() {
+  const data: BlogResponse = await getData();
+
   return (
     <>
-      <HeroContentLeft />
-      <Featured />
-      <Skills />
+      <HomePage items={data.items} />
     </>
   );
 }

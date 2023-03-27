@@ -63,7 +63,7 @@ const Featured = () => {
       <Group position="center" mt={40}>
         <Badge
           variant="gradient"
-          gradient={{ from: "indigo", to: "brand" }}
+          gradient={{ from: "grape", to: "violet" }}
           size="lg"
         >
           Stunning projects
