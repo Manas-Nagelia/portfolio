@@ -39,6 +39,9 @@ const useStyles = createStyles((theme) => ({
     fontSize: rem(60),
     fontWeight: 900,
     lineHeight: 1.1,
+    whiteSpace: "nowrap",
+    overflow: "hidden",
+    textOverflow: "ellipsis",
 
     [theme.fn.smallerThan("sm")]: {
       fontSize: rem(40),
@@ -46,7 +49,7 @@ const useStyles = createStyles((theme) => ({
     },
 
     [theme.fn.smallerThan("xs")]: {
-      fontSize: rem(50),
+      fontSize: rem(45),
     },
   },
 
@@ -80,20 +83,18 @@ export function HeroContentLeft() {
         zIndex={0}
       />
       <Container className={classes.container}>
-        <Title className={classes.title}>
-          Manas Nagelia.
-        </Title>
+        <Title className={classes.title}>Manas Nagelia.</Title>
         <Text className={classes.description} size="xl" mt="sm">
           Investor, Entrepreneur, Developer, and Blogger.
         </Text>
 
         <Button
           variant="gradient"
-          gradient={{ from: '#3a92fd', to: 'brand' }}
-          size="xl"
+          gradient={{ from: "#3a92fd", to: "brand" }}
+          size="lg"
           radius="xl"
           className={classes.control}
-          rightIcon={<IconChevronDown style={{ marginTop: "2px"}} size={25} />}
+          rightIcon={<IconChevronDown style={{ marginTop: "2px" }} size={25} />}
           component="a"
           href="#feature"
         >

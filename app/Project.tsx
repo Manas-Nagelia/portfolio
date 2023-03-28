@@ -87,7 +87,7 @@ export function Project(props: Portfolio) {
           alt={props.imageAlt}
           width="0"
           height="0"
-          sizes={!mobile ? "15vw" : "80vw"}
+          sizes={!mobile ? "40vw" : "80vw"}
           style={{
             width: "100%",
             height: "auto",

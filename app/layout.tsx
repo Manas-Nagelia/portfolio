@@ -18,38 +18,20 @@ export default function RootLayout({
           <HeaderMenu
             links={[
               {
-                link: "/features",
-                label: "Features",
+                link: "#feature",
+                label: "Portfolio",
               },
               {
-                link: "#1",
-                label: "Learn",
-                links: [
-                  {
-                    link: "/docs",
-                    label: "Documentation",
-                  },
-                  {
-                    link: "/resources",
-                    label: "Resources",
-                  },
-                  {
-                    link: "/community",
-                    label: "Community",
-                  },
-                  {
-                    link: "/blog",
-                    label: "Blog",
-                  },
-                ],
+                link: "#skills",
+                label: "Skills",
               },
               {
-                link: "/about",
-                label: "About",
+                link: "#blogs",
+                label: "Blogs",
               },
               {
-                link: "/pricing",
-                label: "Pricing",
+                link: "/invest",
+                label: "Investor",
               },
               {
                 link: "#2",

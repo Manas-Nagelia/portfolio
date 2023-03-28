@@ -66,7 +66,7 @@ export function Skills() {
   const { classes, theme } = useStyles();
 
   return (
-    <Container size="lg" py="xl" mt={40}>
+    <Container size="lg" py="xl" mt={40} id="skills">
       <Group position="center">
         <Badge
           variant="gradient"

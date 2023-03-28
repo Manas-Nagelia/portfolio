@@ -203,7 +203,6 @@ export function HeaderMenu({ links }: HeaderSearchProps) {
             <a
               href={link.link}
               className={classes.link}
-              onClick={(event) => event.preventDefault()}
             >
               <Center>
                 <span className={classes.linkLabel}>{link.label}</span>
@@ -221,7 +220,6 @@ export function HeaderMenu({ links }: HeaderSearchProps) {
         key={link.label}
         href={link.link}
         className={classes.link}
-        onClick={(event) => event.preventDefault()}
       >
         {link.label}
       </a>

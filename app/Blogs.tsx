@@ -10,7 +10,7 @@ import {
   Button,
 } from "@mantine/core";
 import { convert } from "html-to-text";
-import { Blog } from "./Blog";
+import { Blog } from "./Blog.tsx";
 import { Item } from "./Blog.ts";
 
 const useStyles = createStyles((theme) => ({
@@ -92,7 +92,7 @@ export default function Blogs(props: Props) {
   blogs.pop();
 
   return (
-    <Container size="lg" py="xl" mt={40}>
+    <Container size="lg" py="xl" mt={40} id="blogs">
       <Group position="center">
         <Badge
           variant="gradient"
