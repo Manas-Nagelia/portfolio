@@ -224,8 +224,8 @@ export function HeaderMenu({ links }: HeaderSearchProps) {
       <Container>
         <div className={classes.inner}>
           <svg
-            width={rem(230)}
-            height={rem(230)}
+            width={rem(210)}
+            height={rem(210)}
             viewBox="0 0 477 69"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"

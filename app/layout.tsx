@@ -61,24 +61,6 @@ export default function RootLayout({
                 link: "/invest",
                 label: "Investor",
               },
-              {
-                link: "#2",
-                label: "Support",
-                links: [
-                  {
-                    link: "/faq",
-                    label: "FAQ",
-                  },
-                  {
-                    link: "/demo",
-                    label: "Book a demo",
-                  },
-                  {
-                    link: "/forums",
-                    label: "Forums",
-                  },
-                ],
-              },
             ]}
           />
           {children}
