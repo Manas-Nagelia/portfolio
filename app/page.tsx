@@ -3,7 +3,6 @@ import HomePage from "./HomePage";
 import fs from "fs";
 import { BlogResponse } from "./Blog";
 
-const inter = Inter({ subsets: ["latin"] });
 
 async function getData() {
   const queryParams = new URLSearchParams({
