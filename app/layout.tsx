@@ -46,7 +46,7 @@ export default function RootLayout({
           <HeaderMenu
             links={[
               {
-                link: "/portfolio",
+                link: "#portfolio",
                 label: "Portfolio",
               },
               {
@@ -56,10 +56,6 @@ export default function RootLayout({
               {
                 link: "#blogs",
                 label: "Blogs",
-              },
-              {
-                link: "/invest",
-                label: "Investor",
               },
             ]}
           />
