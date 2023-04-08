@@ -120,15 +120,15 @@ const Featured = () => {
         <Grid.Col md={6} lg={4}>
           <Project
             name="ChatMe"
-            desc="A personal project, a realtime chat app build with Next.js. Ships with a stunning UI and ability to chat with multiple people. "
+            desc="Realtime chat app with stunning UI built with Next.js and Node.js. Lightning fast with Redis as a cache."
             label="Full Stack Website"
             imageName="Chat.webp"
             imageAlt="An image of the chat app, ChatMe."
             data={[
               { label: "Node", icon: IconApi },
               { label: "Next.js", icon: IconBrandNextjs },
-              { label: "Supabase Backend", icon: IconBrandSupabase },
-              { label: "Postgres", icon: IconDatabase },
+              { label: "Supabase", icon: IconBrandSupabase },
+              { label: "Postgres and Redis", icon: IconDatabase },
             ]}
             linkName="GitHub"
             link="https://github.com/Manas-Nagelia/ChatMe"
