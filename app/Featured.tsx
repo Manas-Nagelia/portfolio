@@ -77,12 +77,29 @@ const Featured = () => {
       <Text c="dimmed" className={classes.description} ta="center" mt="md">
         Take a look at the best ones.
       </Text>
-      <Group mt="xl" position="center" mb="sm">
+      {/* <Group mt="xl" position="center" mb="sm">
         <Button size="md" radius="xl" component="a">
           See more projects
         </Button>
-      </Group>
+      </Group> */}
       <Grid gutter="xl" className={classes.grid}>
+        <Grid.Col md={6} lg={4}>
+          <Project
+            name="PSC Hand Safety LLP"
+            desc="Redesigned and created the website for a multi-millionaire dollar oil rig company based in India, PSC Hand Safety LLP."
+            label="Wix"
+            imageName="PSC.webp"
+            imageAlt="An image of the website, Portal Bioscience."
+            data={[
+              { label: "Wix", icon: IconBrandWix },
+              { label: "SEO Optimized", icon: IconSeo },
+              { label: "Business Website", icon: IconBuilding },
+            ]}
+            linkName="Website"
+            link="https://portalbioscience.com/"
+            buttonColor="#ED1C24"
+          />
+        </Grid.Col>
         <Grid.Col md={6} lg={4}>
           <Project
             name="Garden Playhouse Daycare Website"
@@ -113,7 +130,7 @@ const Featured = () => {
               { label: "Business Website", icon: IconBuilding },
             ]}
             linkName="Website"
-            link="https://portalbioscience.com/"
+            link="https://www.portalbioscience.com/"
             buttonColor="#BA1E23"
           />
         </Grid.Col>

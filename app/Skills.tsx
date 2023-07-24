@@ -87,7 +87,7 @@ export function Skills() {
       </Text>
 
       <Group mt="xl" position="center" mb="xl">
-        <Button size="md" radius="xl" component="a">
+        <Button size="md" radius="xl" component="a" href="https://www.fiverr.com/undevable">
           See my services
         </Button>
       </Group>
