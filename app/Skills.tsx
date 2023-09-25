@@ -10,6 +10,7 @@ import {
   rem,
   List,
   Button,
+  Code,
 } from "@mantine/core";
 import {
   IconDeviceDesktop,
@@ -87,7 +88,12 @@ export function Skills() {
       </Text>
 
       <Group mt="xl" position="center" mb="xl">
-        <Button size="md" radius="xl" component="a" href="https://www.fiverr.com/undevable">
+        <Button
+          size="md"
+          radius="xl"
+          component="a"
+          href="https://www.fiverr.com/undevable"
+        >
           See my services
         </Button>
       </Group>
@@ -147,7 +153,30 @@ export function Skills() {
               <List.Item>Node.js</List.Item>
               <List.Item>MERN Stack</List.Item>
               <List.Item>Rest APIs</List.Item>
-              <List.Item>Python</List.Item>
+              <List.Item>
+                Python
+                <List withPadding>
+                  <List.Item>
+                    Data Analysis
+                    <List withPadding>
+                      <List.Item>
+                        <Code>pandas</Code>
+                      </List.Item>
+                      <List.Item>
+                        <Code>numpy</Code>
+                      </List.Item>
+                    </List>
+                  </List.Item>
+                  <List.Item>
+                    AI & Machine Learning
+                    <List withPadding>
+                      <List.Item>
+                        <Code>scikit-learn</Code>
+                      </List.Item>
+                    </List>
+                  </List.Item>
+                </List>
+              </List.Item>
             </List>
           </Text>
         </Card>
