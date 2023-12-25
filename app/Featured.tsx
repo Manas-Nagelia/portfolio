@@ -59,7 +59,7 @@ const useStyles = createStyles((theme: MantineTheme) => ({
 const Featured = () => {
   const { classes } = useStyles();
   return (
-    <div id="feature">
+    <div id="portfolio">
       <Group position="center" mt={40}>
         <Badge
           variant="gradient"
