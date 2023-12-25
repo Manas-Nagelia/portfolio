@@ -89,14 +89,14 @@ const Featured = () => {
             desc="Redesigned and created the website for a multi-millionaire dollar oil rig company based in India, PSC Hand Safety LLP."
             label="Wix"
             imageName="PSC.webp"
-            imageAlt="An image of the website, Portal Bioscience."
+            imageAlt="An image of the website, PSC Hand Safety."
             data={[
               { label: "Wix", icon: IconBrandWix },
               { label: "SEO Optimized", icon: IconSeo },
               { label: "Business Website", icon: IconBuilding },
             ]}
             linkName="Website"
-            link="https://portalbioscience.com/"
+            link="https://www.pschandsafety.com/"
             buttonColor="#ED1C24"
           />
         </Grid.Col>
