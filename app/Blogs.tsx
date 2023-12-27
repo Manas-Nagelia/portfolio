@@ -68,6 +68,7 @@ export default function Blogs(props: Props) {
   const blogs = props.blogs.map((blog) => {
     const category = blog.categories[0];
     const subtitle = blog.content.split("<h4>")[1].split("</h4>")[0];
+    const thumbnail = blog.content.split('<img alt=\"\" src=\"')[1].split('\">')[0];
     const desc = convert(blog.content.split("<p>")[1], {
       selectors: [
         { selector: "a", options: { linkBrackets: false, ignoreHref: true } },
@@ -78,7 +79,7 @@ export default function Blogs(props: Props) {
 
     return (
       <Blog
-        image={blog.thumbnail}
+        image={thumbnail}
         category={category.charAt(0).toUpperCase() + category.slice(1)}
         title={blog.title}
         footer={subtitle}
