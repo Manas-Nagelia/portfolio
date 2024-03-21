@@ -15,10 +15,14 @@ import {
   IconBrandNextjs,
   IconBrandSupabase,
   IconDatabase,
-  IconBrandReact,
+  IconBrandWordpress,
   IconApi,
+  IconBrandReact,
+  IconBrandReactNative,
   IconChartBar,
   IconBrandWix,
+  IconBrandPython,
+  IconServer,
   IconSeo,
   IconBuilding,
 } from "@tabler/icons-react";
@@ -58,6 +62,7 @@ const useStyles = createStyles((theme: MantineTheme) => ({
 
 const Featured = () => {
   const { classes } = useStyles();
+
   return (
     <div id="portfolio">
       <Group position="center" mt={40}>
@@ -83,6 +88,95 @@ const Featured = () => {
         </Button>
       </Group> */}
       <Grid gutter="xl" className={classes.grid}>
+        
+        <Grid.Col md={6} lg={4}>
+          <Project
+            name="Backboard Stats Mobile App"
+            desc="Helped to program and UI design mobile app for Backboard Stats. Built in React Native with clean animations. Runs on a Flask & Node.js serverless backend API. Currently work in progress."
+            label="React Native"
+            imageName="BBMobile.webp"
+            imageAlt="Three images of the mobile app of Backboard Stats."
+            data={[
+              { label: "React Native", icon: IconBrandReactNative },
+              { label: "Supabase", icon: IconBrandSupabase },
+              { label: "Python", icon: IconBrandPython },
+              { label: "Serverless", icon: IconServer },
+            ]}
+            linkName="Main Website"
+            link="https://www.backboardstats.com/"
+            buttonColor="#FA8855"
+          />
+        </Grid.Col>
+        <Grid.Col md={6} lg={4}>
+          <Project
+            name="Backboard Stats Website"
+            desc="Co-founder of BackBoard Stats. UI Designed, programmed, and deployed the frontend and backend for a NBA stats web app. Runs on a Flask & Node.js serverless backend and React as frontend using Next.js. Features include authentication, following, and NBA stats."
+            label="Next.js"
+            imageName="BBWebsite.webp"
+            imageAlt="An image of the website, Backboard Stats."
+            data={[
+              { label: "Node.js", icon: IconApi },
+              { label: "React.js", icon: IconBrandReact },
+              { label: "Next.js", icon: IconBrandNextjs },
+              { label: "Supabase", icon: IconBrandSupabase },
+              { label: "Python", icon: IconBrandPython },
+              { label: "Serverless", icon: IconServer },
+            ]}
+            linkName="Website"
+            link="https://www.backboardstats.com/"
+            buttonColor="#FA8855"
+          />
+        </Grid.Col>
+        <Grid.Col md={6} lg={4}>
+          <Project
+            name="Kidney Plate Mobile App"
+            desc="Programmed and designed a prototype idea for a nutrional tracker for kidney patients. Current features implemented is a search to filter on all foods coming from USDA Foods API with a modal and passwordless code authentication"
+            label="Next.js"
+            imageName="KidneyPlate.webp"
+            imageAlt="Three images of the mobile app of Kidney Plate."
+            data={[
+              { label: "React Native", icon: IconBrandReactNative },
+              { label: "Supabase", icon: IconBrandSupabase },
+            ]}
+            linkName="GitHub Code"
+            link="https://github.com/Kidney-Plate/app"
+            buttonColor="#4f46e5"
+          />
+        </Grid.Col>
+        <Grid.Col md={6} lg={4}>
+          <Project
+            name="Navdanya Group"
+            desc="Designed and built the website for a rice milling company based in India using Wordpress. Stunning, minimalistic design with clean animations"
+            label="Wordpress"
+            imageName="Navdanya.webp"
+            imageAlt="An image of the website, Navdanya Group."
+            data={[
+              { label: "Wordpress", icon: IconBrandWordpress },
+              { label: "SEO Optimized", icon: IconSeo },
+              { label: "Business Website", icon: IconBuilding },
+            ]}
+            linkName="Website"
+            link="https://navdanya.in/"
+            buttonColor="#7BB52B"
+          />
+        </Grid.Col>
+        <Grid.Col md={6} lg={4}>
+          <Project
+            name="PSC Houston Oilfield Supplies LLC"
+            desc="Designed and built the website for a Houston startup trading company based in Houston, Texas using Wordpress"
+            label="Wordpress"
+            imageName="Houston.webp"
+            imageAlt="An image of the website, PSC Houston Oilfield Supplies."
+            data={[
+              { label: "Wordpress", icon: IconBrandWordpress },
+              { label: "SEO Optimized", icon: IconSeo },
+              { label: "Business Website", icon: IconBuilding },
+            ]}
+            linkName="Website"
+            link="https://www.pschoustonllc.com/"
+            buttonColor="#1B488B"
+          />
+        </Grid.Col>
         <Grid.Col md={6} lg={4}>
           <Project
             name="PSC Hand Safety LLP"
@@ -120,7 +214,7 @@ const Featured = () => {
         <Grid.Col md={6} lg={4}>
           <Project
             name="Portal Bioscience"
-            desc="Made the website for a pathology company, Portal Bioscience in Wix."
+            desc="Made a business website for a pathology company, Portal Bioscience in Wix. SEO Optimized with contact form."
             label="Wix"
             imageName="Portal.webp"
             imageAlt="An image of the website, Portal Bioscience."

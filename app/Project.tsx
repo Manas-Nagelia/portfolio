@@ -127,7 +127,7 @@ export function Project(props: Portfolio) {
                 backgroundColor: props.buttonColor ?? undefined,
 
                 "&:not([data-disabled])": theme.fn.hover({
-                  backgroundColor: theme.fn.darken(`${props.buttonColor ?? undefined}`, 0.05),
+                  backgroundColor: theme.fn.darken(`${props.buttonColor ?? undefined}`, 0.1),
                 }),
               },
             })}
