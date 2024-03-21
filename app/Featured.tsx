@@ -93,7 +93,7 @@ const Featured = () => {
           <Project
             name="Backboard Stats Mobile App"
             desc="Helped to program and UI design mobile app for Backboard Stats. Built in React Native with clean animations. Runs on a Flask & Node.js serverless backend API. Currently work in progress."
-            label="React Native"
+            label="Mobile App"
             imageName="BBMobile.webp"
             imageAlt="Three images of the mobile app of Backboard Stats."
             data={[
@@ -111,7 +111,7 @@ const Featured = () => {
           <Project
             name="Backboard Stats Website"
             desc="Co-founder of BackBoard Stats. UI Designed, programmed, and deployed the frontend and backend for a NBA stats web app. Runs on a Flask & Node.js serverless backend and React as frontend using Next.js. Features include authentication, following, and NBA stats."
-            label="Next.js"
+            label="FULL STACK WEBSITE"
             imageName="BBWebsite.webp"
             imageAlt="An image of the website, Backboard Stats."
             data={[
@@ -131,7 +131,7 @@ const Featured = () => {
           <Project
             name="Kidney Plate Mobile App"
             desc="Programmed and designed a prototype idea for a nutrional tracker for kidney patients. Current features implemented is a search to filter on all foods coming from USDA Foods API with a modal and passwordless code authentication"
-            label="Next.js"
+            label="Mobile App"
             imageName="KidneyPlate.webp"
             imageAlt="Three images of the mobile app of Kidney Plate."
             data={[
