@@ -1,6 +1,6 @@
 interface Data {
   label: string;
-  icon: () => JSX.Element;
+  icon: any;
 }
 
 export interface Portfolio {
