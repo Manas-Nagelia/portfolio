@@ -57,6 +57,10 @@ export default function RootLayout({
                 link: "#blogs",
                 label: "Blogs",
               },
+              {
+                link: "#contact",
+                label: "Contact",
+              },
             ]}
           />
           {children}

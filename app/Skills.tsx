@@ -92,9 +92,10 @@ export function Skills() {
           size="md"
           radius="xl"
           component="a"
-          href="https://www.fiverr.com/undevable"
+          href="/resume.pdf"
+          target="_blank"
         >
-          Contact Me
+          My Résumé
         </Button>
       </Group>
 
