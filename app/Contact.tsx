@@ -8,6 +8,7 @@ import {
   Text,
 } from "@mantine/core";
 import { useForm } from "@mantine/form";
+import { notifications } from "@mantine/notifications";
 
 export function Contact() {
   const form = useForm({
@@ -32,8 +33,32 @@ export function Contact() {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ name: form.values.name, email: form.values.email, subject: form.values.subject, message: form.values.message }),
-        });
+          body: JSON.stringify({
+            name: form.values.name,
+            email: form.values.email,
+            subject: form.values.subject,
+            message: form.values.message,
+          }),
+        })
+          .then((res) => {
+            res.json();
+
+            form.setValues({
+              name: "",
+              email: "",
+              subject: "",
+              message: "",
+            });
+
+            window.scrollTo(0, 0);
+          })
+          .then((data) => {
+            notifications.show({
+              title: "Email Sent!",
+              message:
+                "Email successfully sent! Check your email for a confirmation email. If you don't see it, check your spam. Thank you!",
+            });
+          });
       })}
     >
       <Title
@@ -50,7 +75,7 @@ export function Contact() {
       </Text>
 
       <div style={{ marginLeft: "5%", marginRight: "5%", marginBottom: "1%" }}>
-        <SimpleGrid cols={{ base: 1, sm: 2 }} mt="xl">
+        <SimpleGrid mt="xl">
           <TextInput
             label="Name"
             placeholder="Your name"
@@ -86,7 +111,7 @@ export function Contact() {
           variant="default"
           {...form.getInputProps("message")}
         />
-        <Group justify="center" mt="xl">
+        <Group mt="xl">
           <Button type="submit" size="md">
             Send message
           </Button>

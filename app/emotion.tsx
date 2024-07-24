@@ -3,6 +3,7 @@
 import { CacheProvider } from "@emotion/react";
 import { useEmotionCache, MantineProvider } from "@mantine/core";
 import { useServerInsertedHTML } from "next/navigation";
+import { Notifications } from '@mantine/notifications';
 
 export default function RootStyleRegistry({
   children,
@@ -58,6 +59,7 @@ export default function RootStyleRegistry({
           primaryShade: 5,
         }}
       >
+        <Notifications />
         {children}
       </MantineProvider>
     </CacheProvider>

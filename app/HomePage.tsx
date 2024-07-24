@@ -16,9 +16,9 @@ interface Props {
 }
 
 export default function HomePage(props: Props) {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  // useEffect(() => {
+  //   window.scrollTo(0, 0);
+  // }, []);
 
   return (
     <>
