@@ -94,7 +94,7 @@ export function Skills() {
           component="a"
           href="https://www.fiverr.com/undevable"
         >
-          See my services
+          Contact Me
         </Button>
       </Group>
 

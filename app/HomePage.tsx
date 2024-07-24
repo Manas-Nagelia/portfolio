@@ -9,6 +9,7 @@ import "./styles.css";
 import Blogs from "./Blogs";
 import { Item } from "./Blog";
 import { useEffect } from "react";
+import { Contact } from "./Contact";
 
 interface Props {
   items: Item[];
@@ -25,6 +26,7 @@ export default function HomePage(props: Props) {
       <Featured />
       <Skills />
       <Blogs blogs={props.items} />
+      <Contact />
     </>
   );
 }
