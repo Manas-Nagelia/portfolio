@@ -7,6 +7,7 @@ import {
   createStyles,
   Center,
   Button,
+  Box,
   rem,
   MantineTheme,
 } from "@mantine/core";
@@ -24,6 +25,10 @@ const useStyles = createStyles((theme) => ({
   card: {
     backgroundColor:
       theme.colorScheme === "dark" ? theme.colors.dark[7] : theme.white,
+    // ensure card expands full height of its container
+    height: "100%",
+    display: "flex",
+    flexDirection: "column",
   },
 
   imageSection: {
@@ -61,13 +66,6 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-const mockdata = [
-  { label: "4 passengers", icon: IconUsers },
-  { label: "100 km/h in 4 seconds", icon: IconGauge },
-  { label: "Automatic gearbox", icon: IconManualGearbox },
-  { label: "Electric", icon: IconGasStation },
-];
-
 export function Project(props: Portfolio) {
   const { classes, theme } = useStyles();
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.md}px)`);
@@ -104,10 +102,10 @@ export function Project(props: Portfolio) {
             {props.desc}
           </Text>
         </div>
-        <Badge variant="gradient">{props.label}</Badge>
+        <Badge variant="gradient" mb="sm">{props.label}</Badge>
       </Group>
 
-      <Card.Section className={classes.section} mt="md">
+      <Card.Section className={classes.section} style={{ marginTop: "auto" }} mt="md">
         <Text fz="sm" c="dimmed" className={classes.label}>
           Features and Technologies
         </Text>
@@ -117,7 +115,9 @@ export function Project(props: Portfolio) {
         </Group>
       </Card.Section>
 
-      <Card.Section className={classes.section}>
+      <Card.Section
+        className={classes.section}
+      >
         <Group spacing={30}>
           <Button
             radius="xl"
@@ -125,9 +125,11 @@ export function Project(props: Portfolio) {
             styles={(theme: MantineTheme) => ({
               root: {
                 backgroundColor: props.buttonColor ?? undefined,
-
                 "&:not([data-disabled])": theme.fn.hover({
-                  backgroundColor: theme.fn.darken(`${props.buttonColor ?? undefined}`, 0.1),
+                  backgroundColor: theme.fn.darken(
+                    `${props.buttonColor ?? undefined}`,
+                    0.1
+                  ),
                 }),
               },
             })}
