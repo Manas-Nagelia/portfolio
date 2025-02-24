@@ -102,22 +102,24 @@ export function Project(props: Portfolio) {
             {props.desc}
           </Text>
         </div>
-        <Badge variant="gradient" mb="sm">{props.label}</Badge>
       </Group>
 
-      <Card.Section className={classes.section} style={{ marginTop: "auto" }} mt="md">
-        <Text fz="sm" c="dimmed" className={classes.label}>
-          Features and Technologies
-        </Text>
+      <div style={{ marginTop: "auto" }}>
+        <Badge variant="gradient" mb="md" mt="md">
+          {props.label}
+        </Badge>
+        <Card.Section className={classes.section}>
+          <Text fz="sm" c="dimmed" className={classes.label}>
+            Features and Technologies
+          </Text>
 
-        <Group spacing={8} mb={-8}>
-          {features}
-        </Group>
-      </Card.Section>
+          <Group spacing={8} mb={-8}>
+            {features}
+          </Group>
+        </Card.Section>
+      </div>
 
-      <Card.Section
-        className={classes.section}
-      >
+      <Card.Section className={classes.section}>
         <Group spacing={30}>
           <Button
             radius="xl"

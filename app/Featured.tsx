@@ -25,6 +25,15 @@ import {
   IconServer,
   IconSeo,
   IconBuilding,
+  IconBrandTailwind,
+  IconBrandFigma,
+  IconFlask,
+  IconPepper,
+  IconAi,
+  IconPackage,
+  IconRecordMail,
+  IconUserCircle,
+  IconGraph,
 } from "@tabler/icons-react";
 
 const useStyles = createStyles((theme: MantineTheme) => ({
@@ -88,7 +97,114 @@ const Featured = () => {
         </Button>
       </Group> */}
       <Grid gutter="xl" className={classes.grid}>
-        
+        <Grid.Col md={6} lg={4}>
+          <Project
+            name="The Genuine Journal"
+            desc="Building an independent journalist platform aimed at promoting free speech and reducing polarization via an AI political bias checker. Built with Next.js, Tailwind, and Supabase."
+            label="Platform"
+            imageName="TGJ.jpeg"
+            imageAlt="Screenshot of the The Genuine Journal's platform."
+            data={[
+              { label: "AI", icon: IconAi },
+              { label: "Next.js", icon: IconBrandNextjs },
+              { label: "Tailwind", icon: IconBrandTailwind },
+              { label: "ShadCN", icon: IconPackage },
+              { label: "Supabase", icon: IconBrandSupabase },
+            ]}
+            linkName="Website"
+            link="https://thegenuinejournal.com/"
+            buttonColor="#3C6AF6"
+          />
+        </Grid.Col>
+        <Grid.Col md={6} lg={4}>
+          <Project
+            name="Financial Market Simulation"
+            desc="Building a simulation where AI agents trade against each other in a financial market environment. Different AI agents have different strategies depending on their classification (i.e institional, retail, etc), and these strategies improve over time using reinforcement learning. Being build using Python."
+            label="Simulation"
+            imageName="FinSims.webp"
+            imageAlt="Screenshot of the predicted buy/sell signals for a given stock."
+            data={[
+              { label: "AI", icon: IconAi },
+              { label: "Python", icon: IconBrandPython },
+              { label: "Finance", icon: IconGraph },
+              { label: "Supabase", icon: IconBrandSupabase },
+            ]}
+            linkName="Description (PDF)"
+            link="/FinSims_Description.pdf"
+            buttonColor="#484a50"
+          />
+        </Grid.Col>
+        <Grid.Col md={6} lg={4}>
+          <Project
+            name="JHU Pancreas Pathology Quiz"
+            desc="Built a quiz app for Johns Hopkins University's Pancreas Pathology department for a research study. Used Clerk for seamless magic link authentication."
+            label="Web App"
+            imageName="JHU.png"
+            imageAlt="Screenshot of the JHU quiz app."
+            data={[
+              { label: "Next.js", icon: IconBrandNextjs },
+              { label: "Tailwind", icon: IconBrandTailwind },
+              { label: "Supabase", icon: IconBrandSupabase },
+              { label: "Clerk", icon: IconUserCircle },
+            ]}
+            linkName="Website"
+            link="https://pickaxe-website-production.up.railway.app/"
+            buttonColor="#6C47FF"
+          />
+        </Grid.Col>
+        <Grid.Col md={6} lg={4}>
+          <Project
+            name="Pickaxe Sports"
+            desc="Helped to design the website for Pickaxe Sports and create the cron job for the auto-update functionality of the backend data. Used Figma and Tailwind to design and Python for the cron job execution."
+            label="Website"
+            imageName="Pickaxe.png"
+            imageAlt="Screenshot of the landing page of Pickaxe Sports."
+            data={[
+              { label: "Cron Job", icon: IconDatabase },
+              { label: "Designed in Figma", icon: IconBrandFigma },
+              { label: "Tailwind", icon: IconBrandTailwind },
+              { label: "Supabase", icon: IconBrandSupabase },
+            ]}
+            linkName="Website"
+            link="https://pickaxe-website-production.up.railway.app/"
+            buttonColor="#12B981"
+          />
+        </Grid.Col>
+        <Grid.Col md={6} lg={4}>
+          <Project
+            name="Sander Schulhoff Portfolio"
+            desc="Designed and co-developed a portfolio website for Sander Schulhoff. Designed in Figma and built with Next.js and Tailwind. Website fully responsive and ranks #1 on Google."
+            label="Website"
+            imageName="Sander_Schulhoff.png"
+            imageAlt="Screenshot of the Sander Schulhoff Portfolio website."
+            data={[
+              { label: "Designed in Figma", icon: IconBrandFigma },
+              { label: "Next.js", icon: IconBrandNextjs },
+              { label: "React.js", icon: IconBrandReact },
+              { label: "Tailwind", icon: IconBrandTailwind },
+            ]}
+            linkName="Website"
+            link="https://trigaten.github.io/"
+            buttonColor="#13BB02"
+          />
+        </Grid.Col>
+        {/* <Grid.Col md={6} lg={4}>
+          <Project
+            name="The GPA Gym"
+            desc="Developing an edtech website for a non-profit being built aimed to provide free education globally. Being built with Next.js and Tailwind."
+            label="Website"
+            imageName="TGG.png"
+            imageAlt="Screenshot of the The GPA Gym's website."
+            data={[
+              { label: "Next.js", icon: IconBrandNextjs },
+              { label: "React.js", icon: IconBrandReact },
+              { label: "Tailwind", icon: IconBrandTailwind },
+            ]}
+            linkName="Website"
+            link="https://trigaten.github.io/"
+            buttonColor="#057A55"
+          />
+        </Grid.Col> */}
         <Grid.Col md={6} lg={4}>
           <Project
             name="Backboard Stats Mobile App"
@@ -100,7 +216,8 @@ const Featured = () => {
               { label: "React Native", icon: IconBrandReactNative },
               { label: "Supabase", icon: IconBrandSupabase },
               { label: "Python", icon: IconBrandPython },
-              { label: "Serverless", icon: IconServer },
+              { label: "Flask", icon: IconPepper },
+              { label: "Node.js", icon: IconApi },
             ]}
             linkName="Main Website"
             link="https://www.backboardstats.com/"
@@ -115,12 +232,11 @@ const Featured = () => {
             imageName="BBWebsite.webp"
             imageAlt="An image of the website, Backboard Stats."
             data={[
-              { label: "Node.js", icon: IconApi },
-              { label: "React.js", icon: IconBrandReact },
               { label: "Next.js", icon: IconBrandNextjs },
+              { label: "Node.js", icon: IconApi },
               { label: "Supabase", icon: IconBrandSupabase },
               { label: "Python", icon: IconBrandPython },
-              { label: "Serverless", icon: IconServer },
+              { label: "Flask", icon: IconPepper },
             ]}
             linkName="Website"
             link="https://www.backboardstats.com/"
@@ -141,6 +257,23 @@ const Featured = () => {
             linkName="GitHub Code"
             link="https://github.com/Kidney-Plate/app"
             buttonColor="#4f46e5"
+          />
+        </Grid.Col>
+        <Grid.Col md={6} lg={4}>
+          <Project
+            name="PSC Hand Safety LLP"
+            desc="Redesigned and created the website for a multi-millionaire dollar oil rig company based in India, PSC Hand Safety LLP."
+            label="Wix"
+            imageName="PSC.webp"
+            imageAlt="An image of the website, PSC Hand Safety."
+            data={[
+              { label: "Wix", icon: IconBrandWix },
+              { label: "SEO Optimized", icon: IconSeo },
+              { label: "Business Website", icon: IconBuilding },
+            ]}
+            linkName="Website"
+            link="https://www.pschandsafety.com/"
+            buttonColor="#ED1C24"
           />
         </Grid.Col>
         <Grid.Col md={6} lg={4}>
@@ -177,23 +310,7 @@ const Featured = () => {
             buttonColor="#1B488B"
           />
         </Grid.Col>
-        <Grid.Col md={6} lg={4}>
-          <Project
-            name="PSC Hand Safety LLP"
-            desc="Redesigned and created the website for a multi-millionaire dollar oil rig company based in India, PSC Hand Safety LLP."
-            label="Wix"
-            imageName="PSC.webp"
-            imageAlt="An image of the website, PSC Hand Safety."
-            data={[
-              { label: "Wix", icon: IconBrandWix },
-              { label: "SEO Optimized", icon: IconSeo },
-              { label: "Business Website", icon: IconBuilding },
-            ]}
-            linkName="Website"
-            link="https://www.pschandsafety.com/"
-            buttonColor="#ED1C24"
-          />
-        </Grid.Col>
+
         <Grid.Col md={6} lg={4}>
           <Project
             name="Garden Playhouse Daycare Website"
